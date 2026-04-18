@@ -3,858 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeff's Second Family - PenPal Ministry Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Jeff's Second Family PenPal Ministry</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Playfair Display', Georgia, serif;
-            background: linear-gradient(135deg, #fdf8f6 0%, #f7f3f0 100%);
-            color: #2c1810;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #8b4513, #d4a574);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
-            color: white;
-            font-size: 20px;
-        }
-
-        .logo-text h1 {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #8b4513, #d4a574);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-        }
-
-        .logo-text p {
-            font-size: 12px;
-            color: #8b4513;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #8b4513;
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.2s ease;
-        }
-
-        .nav a:hover {
-            color: #d4a574;
-        }
-
-        .cta-button {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #8b4513, #d4a574);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
-            transition: transform 0.2s ease;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 120px 0 80px;
+        
+        .header {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #8b4513, #d2691e);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(139, 69, 19, 0.1);
-            border-radius: 25px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(139, 69, 19, 0.2);
-            color: #8b4513;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero h1 {
-            font-size: 64px;
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             font-weight: 700;
-            margin: 0 0 30px 0;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #2c1810, #8b4513, #d4a574);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-
-        .hero p {
-            font-size: 22px;
-            color: #6b5b4c;
-            line-height: 1.6;
-            margin: 0 auto 50px auto;
-            max-width: 700px;
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
         }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            padding: 16px 32px;
-            background: linear-gradient(135deg, #8b4513, #d4a574);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(139, 69, 19, 0.4);
-        }
-
-        .btn-secondary {
-            padding: 16px 32px;
-            background: transparent;
-            color: #8b4513;
-            border: 2px solid #8b4513;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            background: #8b4513;
-            color: white;
-        }
-
-        /* Stats Section */
+        
         .stats {
-            padding: 80px 0;
-            background: white;
-            border-top: 1px solid rgba(139, 69, 19, 0.1);
-            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-        }
-
-        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
+            gap: 25px;
+            margin-bottom: 40px;
         }
-
+        
         .stat-card {
-            padding: 40px 20px;
-            border-radius: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
-
-        .stat-card:nth-child(1) {
-            background: linear-gradient(135deg, #2563eb10, #2563eb05);
-            border: 1px solid #2563eb20;
-        }
-
-        .stat-card:nth-child(2) {
-            background: linear-gradient(135deg, #dc262610, #dc262605);
-            border: 1px solid #dc262620;
-        }
-
-        .stat-card:nth-child(3) {
-            background: linear-gradient(135deg, #05966910, #05966905);
-            border: 1px solid #05966920;
-        }
-
-        .stat-card:nth-child(4) {
-            background: linear-gradient(135deg, #7c3aed10, #7c3aed05);
-            border: 1px solid #7c3aed20;
-        }
-
+        
         .stat-card:hover {
             transform: translateY(-5px);
         }
-
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            color: white;
-            font-size: 28px;
-        }
-
-        .stat-card:nth-child(1) .stat-icon {
-            background: linear-gradient(135deg, #2563eb, #2563ebdd);
-            box-shadow: 0 8px 25px #2563eb30;
-        }
-
-        .stat-card:nth-child(2) .stat-icon {
-            background: linear-gradient(135deg, #dc2626, #dc2626dd);
-            box-shadow: 0 8px 25px #dc262630;
-        }
-
-        .stat-card:nth-child(3) .stat-icon {
-            background: linear-gradient(135deg, #059669, #059669dd);
-            box-shadow: 0 8px 25px #05966930;
-        }
-
-        .stat-card:nth-child(4) .stat-icon {
-            background: linear-gradient(135deg, #7c3aed, #7c3aeddd);
-            box-shadow: 0 8px 25px #7c3aed30;
-        }
-
+        
         .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            margin: 0 0 8px 0;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 10px;
         }
-
-        .stat-card:nth-child(1) .stat-number { color: #2563eb; }
-        .stat-card:nth-child(2) .stat-number { color: #dc2626; }
-        .stat-card:nth-child(3) .stat-number { color: #059669; }
-        .stat-card:nth-child(4) .stat-number { color: #7c3aed; }
-
+        
         .stat-label {
-            font-size: 16px;
-            color: #6b5b4c;
+            font-size: 1.1rem;
+            color: #666;
             font-weight: 500;
         }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #faf7f5, #ffffff);
-        }
-
-        .features-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .features-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(139, 69, 19, 0.1);
-            border-radius: 25px;
-            margin-bottom: 20px;
-            color: #8b4513;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .features h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 0 0 20px 0;
-            color: #2c1810;
-        }
-
-        .features-description {
-            font-size: 20px;
-            color: #6b5b4c;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
+        
+        .section {
             background: white;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid rgba(139, 69, 19, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        
+        .section h2 {
+            color: #8b4513;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8b451320;
         }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--feature-color), var(--feature-color-light));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: left;
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-card:nth-child(1) {
-            --feature-color: #8b4513;
-            --feature-color-light: #d4a574;
-        }
-
-        .feature-card:nth-child(2) {
-            --feature-color: #2563eb;
-            --feature-color-light: #60a5fa;
-        }
-
-        .feature-card:nth-child(3) {
-            --feature-color: #7c3aed;
-            --feature-color-light: #a78bfa;
-        }
-
-        .feature-card:nth-child(4) {
-            --feature-color: #059669;
-            --feature-color-light: #34d399;
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            color: white;
-            font-size: 32px;
-        }
-
-        .feature-card:nth-child(1) .feature-icon {
-            background: linear-gradient(135deg, #8b4513, #d4a574);
-            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
-        }
-
-        .feature-card:nth-child(2) .feature-icon {
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-        }
-
-        .feature-card:nth-child(3) .feature-icon {
-            background: linear-gradient(135deg, #7c3aed, #a78bfa);
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
-        }
-
-        .feature-card:nth-child(4) .feature-icon {
-            background: linear-gradient(135deg, #059669, #34d399);
-            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
-        }
-
-        .feature-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 0 15px 0;
-            color: #2c1810;
-        }
-
-        .feature-description {
-            font-size: 16px;
-            color: #6b5b4c;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-        }
-
-        .feature-demo {
-            padding: 15px;
+        
+        .inmate-card {
+            border: 2px solid #e9ecef;
+            padding: 25px;
+            margin-bottom: 20px;
             border-radius: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .feature-card:nth-child(1) .feature-demo {
-            background: rgba(139, 69, 19, 0.08);
-            border: 1px solid rgba(139, 69, 19, 0.2);
-            color: #8b4513;
-        }
-
-        .feature-card:nth-child(2) .feature-demo {
-            background: rgba(37, 99, 235, 0.08);
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            color: #2563eb;
-        }
-
-        .feature-card:nth-child(3) .feature-demo {
-            background: rgba(124, 58, 237, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            color: #7c3aed;
-        }
-
-        .feature-card:nth-child(4) .feature-demo {
-            background: rgba(5, 150, 105, 0.08);
-            border: 1px solid rgba(5, 150, 105, 0.2);
-            color: #059669;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #2c1810, #8b4513);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 0 0 25px 0;
-            line-height: 1.2;
-        }
-
-        .cta-section p {
-            font-size: 22px;
-            opacity: 0.9;
-            margin: 0 0 40px 0;
-            line-height: 1.6;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-white {
-            padding: 18px 36px;
-            background: white;
-            color: #8b4513;
-            border: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #f8f9fa;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
         }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        
+        .inmate-card:hover {
+            border-color: #8b4513;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.1);
         }
-
-        .btn-outline {
-            padding: 18px 36px;
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #8b4513;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo h3 {
-            margin: 0;
-            font-size: 24px;
-            color: #d4a574;
-        }
-
-        .footer-description {
-            font-size: 16px;
-            opacity: 0.8;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-copyright {
-            margin: 0;
-            opacity: 0.6;
-        }
-
-        .footer-domain {
-            margin: 0;
-            opacity: 0.6;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav {
-                display: none;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">❤️</div>
-                    <div class="logo-text">
-                        <h1>Jeff's Second Family</h1>
-                        <p>PenPal Ministry Platform</p>
-                    </div>
-                </div>
-                <nav class="nav">
-                    <a href="#features">Features</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#" class="cta-button">Get Started</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge">
-                    🙏 Connecting Hearts Across Barriers
-                </div>
-                
-                <h1>Ministry Platform for<br>Meaningful Connections</h1>
-                
-                <p>
-                    Connecting incarcerated individuals with caring volunteers through automated matching, 
-                    daily spiritual content, and powerful ministry management tools.
-                </p>
-                
-                <div class="hero-buttons">
-                    <a href="#" class="btn-primary">
-                        Explore Platform →
-                    </a>
-                    <a href="#" class="btn-secondary">
-                        Watch Demo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <h3 class="stat-number">127</h3>
-                    <p class="stat-label">Active Inmates</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">❤️</div>
-                    <h3 class="stat-number">89</h3>
-                    <p class="stat-label">Volunteers</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">✉️</div>
-                    <h3 class="stat-number">2,840+</h3>
-                    <p class="stat-label">Letters Processed</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🌍</div>
-                    <h3 class="stat-number">12</h3>
-                    <p class="stat-label">Countries Reached</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="features-header">
-                <div class="features-badge">
-                    ✨ Platform Features
-                </div>
-                <h2>Everything You Need</h2>
-                <p class="features-description">
-                    Comprehensive tools designed to streamline ministry operations and deepen meaningful connections.
-                </p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3 class="feature-title">Daily Meditations</h3>
-                    <p class="feature-description">
-                        Automated Henri Nouwen meditations delivered to your inbox every morning at 6 AM
-                    </p>
-                    <p class="feature-demo">
-                        💡 View today's meditation with beautiful formatting and scripture references
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">Smart Matching</h3>
-                    <p class="feature-description">
-                        AI-powered system matches volunteers with inmates based on preferences and compatibility
-                    </p>
-                    <p class="feature-demo">
-                        💡 Priority queue ensures longest-waiting inmates get matched first
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3 class="feature-title">Handwriting OCR</h3>
-                    <p class="feature-description">
-                        Extract text from handwritten letters with 90%+ accuracy using advanced AI recognition
-                    </p>
-                    <p class="feature-demo">
-                        💡 Upload a photo and watch the system extract readable text instantly
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <h3 class="feature-title">Database Management</h3>
-                    <p class="feature-description">
-                        Complete admin dashboard for tracking inmates, volunteers, and correspondence
-                    </p>
-                    <p class="feature-demo">
-                        💡 Real-time statistics and powerful search across all ministry data
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Ministry?</h2>
-                
-                <p>
-                    Join ministries worldwide using our platform to create meaningful connections 
-                    and streamline operations with powerful automation.
-                </p>
-                
-                <div class="cta-buttons">
-                    <a href="#" class="btn-white">
-                        Start Free Trial ⭐
-                    </a>
-                    <a href="#" class="btn-outline">
-                        Schedule Demo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div style="color: #d4a574; font-size: 24px;">❤️</div>
-                    <h3>Jeff's Second Family</h3>
-                </div>
-                <p class="footer-description">
-                    Building bridges of hope and connection through technology-powered ministry.
-                </p>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2026 Jeff's Second Family PenPal Ministry. All rights reserved.
-                </p>
-                <p class="footer-domain">
-                    penpalministry.org
-                </p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
