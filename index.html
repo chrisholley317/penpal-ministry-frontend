@@ -107,3 +107,323 @@
             border-color: #8b4513;
             box-shadow: 0 8px 25px rgba(139, 69, 19, 0.1);
         }
+        
+        .priority-high {
+            border-left: 6px solid #dc2626;
+            background: linear-gradient(135deg, #dc262608, #f8f9fa);
+        }
+        
+        .priority-medium {
+            border-left: 6px solid #f59e0b;
+        }
+        
+        .inmate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .inmate-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .priority-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-high {
+            background: #dc2626;
+            color: white;
+        }
+        
+        .badge-medium {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .inmate-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-item {
+            font-size: 0.95rem;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #8b4513;
+        }
+        
+        .intro-text {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #8b4513;
+            margin-top: 15px;
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #8b451315, white);
+            border: 2px solid #8b4513;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            color: #8b4513;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info strong {
+            color: #8b4513;
+        }
+        
+        .system-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .securus {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .jpay {
+            background: #7c3aed;
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #666;
+            border-top: 2px solid #8b451320;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .inmate-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Jeff's Second Family PenPal Ministry</h1>
+            <p>Connecting Hearts • Sharing Hope • Building Bridges</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Inmates Waiting for Pen Pals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">23</div>
+                <div class="stat-label">Using Securus System</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">High Priority Cases</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">185</div>
+                <div class="stat-label">Average Days Waiting</div>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>High Priority Inmates Needing Pen Pals</h2>
+            
+            <div class="inmate-card priority-high">
+                <div class="inmate-header">
+                    <div class="inmate-name">Charles Campbell #158122</div>
+                    <div class="priority-badge badge-high">High Priority</div>
+                </div>
+                <div class="inmate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Days Waiting:</span> 226 days
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">System:</span> Securus
+                        <span class="system-badge securus">Securus</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Status:</span> Refused previous match
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Age:</span> 31 years old
+                    </div>
+                </div>
+                <div class="intro-text">
+                    "My name is Charles Travis Campbell. I am 31 years old and I am 5'5 and 165 pounds. I workout every day. I am in good health all the way around. This is my 5th trip to ADC and I have been gone since Dec 27th 2021. I will be seeing the parole board soon but until then I would like some good conversation and we can see what it leads to but I'm super cool either way. I got a good sense of humor and there is never a dull moment around me for sure."
+                </div>
+            </div>
+
+            <div class="inmate-card priority-high">
+                <div class="inmate-header">
+                    <div class="inmate-name">Anthony Adams #144730</div>
+                    <div class="priority-badge badge-high">High Priority</div>
+                </div>
+                <div class="inmate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Days Waiting:</span> 409 days
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">System:</span> JPay
+                        <span class="system-badge jpay">JPay</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Prison:</span> AR-DOC North Central Unit
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Note:</span> Uses JPay system - www.jpay.com
+                    </div>
+                </div>
+                <div class="intro-text">
+                    "Hello, I am Anthony Adams and I am reaching out through JPay in hopes of establishing meaningful correspondence. I believe in the power of connection and hope to share meaningful conversations with someone who understands the importance of faith in overcoming life's challenges."
+                </div>
+            </div>
+
+            <div class="inmate-card priority-high">
+                <div class="inmate-header">
+                    <div class="inmate-name">Jermaine Jackson #173824</div>
+                    <div class="priority-badge badge-high">Recent Request</div>
+                </div>
+                <div class="inmate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Request Date:</span> April 8, 2026
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">System:</span> Securus
+                        <span class="system-badge securus">Securus</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Days Waiting:</span> 10 days
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Background:</span> Sports, Bible study
+                    </div>
+                </div>
+                <div class="intro-text">
+                    "Hey, my name is Jermaine. I am a cool laid back type of person. I am the third oldest of six kids. I have 2 older sisters and three younger brothers. I grew up liking sports and that was one of the main ways I past time. As I have grown older I have picked up a couple more hobbies like leather crafting and tutoring people to help them get their G.E.D. If I'm not doing one of those three things then I'm probably reading my Bible and attending different bible study groups."
+                </div>
+            </div>
+
+            <div class="inmate-card priority-high">
+                <div class="inmate-header">
+                    <div class="inmate-name">Joshua Whitworth #181139</div>
+                    <div class="priority-badge badge-high">Recent Request</div>
+                </div>
+                <div class="inmate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Request Date:</span> April 5, 2026
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">System:</span> Securus
+                        <span class="system-badge securus">Securus</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Days Waiting:</span> 13 days
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Focus:</span> Personal development
+                    </div>
+                </div>
+                <div class="intro-text">
+                    "Hello, my name is Joshua and I am reaching out in hopes of establishing a pen pal relationship. I am focused on positive change and personal development. I believe that having meaningful correspondence would greatly benefit my journey of rehabilitation and growth."
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Additional Inmates Seeking Correspondence</h2>
+            
+            <div class="inmate-card priority-medium">
+                <div class="inmate-header">
+                    <div class="inmate-name">Matthew Armstrong #653248</div>
+                    <div class="priority-badge badge-medium">Medium Priority</div>
+                </div>
+                <div class="inmate-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Days Waiting:</span> 278 days
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">System:</span> Securus
+                        <span class="system-badge securus">Securus</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Age:</span> 38 years old
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Background:</span> Christian, construction
+                    </div>
+                </div>
+                <div class="intro-text">
+                    "Well my name is Matthew Armstrong I'm 38 years old I'm in prison for first degree murder and first degree escape. They gave me life plus fifty years. I'm wrongfully convicted. I like to work construction, concrete, farming, riding horses, fishing and hunting. I'm a Christian and I'm learning very important lessons in life unfortunately they seem to be the hard way. I'm looking for someone I can talk to to grow with in knowledge and life."
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-section">
+            <h3>📧 Contact for Volunteer Matching</h3>
+            <div class="contact-info"><strong>Email:</strong> chrisholley317@gmail.com</div>
+            <div class="contact-info"><strong>Website:</strong> penpalministry.org</div>
+            <div style="margin-top: 20px; font-size: 1rem; color: #666;">
+                <strong>Important:</strong> All volunteers need 18+ age verification and real name disclosure for Securus system
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Jeff's Second Family PenPal Ministry</p>
+            <p>Connecting hearts through faith and compassion</p>
+        </footer>
+    </div>
+</body>
+</html>
